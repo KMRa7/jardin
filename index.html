@@ -69,35 +69,35 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans JP", sans-serif;
             background-color: #f7f7f7;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            padding-top: 20px;
+            padding: 16px 8px 24px;
         }
 
         .container {
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 500px;
-            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 480px;
+            padding: 18px 16px 20px;
             box-sizing: border-box;
         }
 
         h1 {
             background: linear-gradient(135deg, #13ca5e, #0fa958);
             color: white;
-            padding: 20px;
+            padding: 18px;
             border-radius: 0 15px 0px 45px;
             text-align: center;
             display: block;
-            margin: -20px -15px 20px -15px;
-            font-size: 26px;
+            margin: -18px -12px 18px -12px;
+            font-size: 22px;
             font-weight: 600;
             box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -112,16 +112,23 @@
 
         .label {
             display: block;
-            margin-bottom: 10px;
-            padding: 3px;
+            margin-bottom: 8px;
+            padding: 4px 8px;
             font-weight: 600;
             background-color: #13ca5e;
             color: white;
             border-radius: 6px;
-            font-size: 18px;
-            text-align: center;
+            font-size: 15px;
+            text-align: left;
             position: relative;
             overflow: hidden;
+        }
+
+        .label .note-text-small {
+            font-size: 0.7em;
+            display: block;
+            margin-top: 3px;
+            color: #fff5c2;
         }
 
         input[type="text"],
@@ -129,13 +136,14 @@
         input[type="datetime-local"],
         textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
+            padding: 11px 10px;
+            margin-bottom: 16px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s;
+            background-color: #fff;
         }
 
         .required-icon {
@@ -154,41 +162,44 @@
         .button-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
         .button-group button {
             flex: 1;
-            padding: 10px;
+            min-width: 30%;
+            padding: 10px 6px;
+            border-radius: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
             background-color: #f7f7f7;
             cursor: pointer;
             box-sizing: border-box;
             text-align: center;
             white-space: nowrap;
+            font-size: 14px;
         }
 
         .button-group button.active {
             background-color: #444;
             color: #fff;
-        }
-
-        .date-inputs input[type="datetime-local"] {
-            width: 100%;
-            margin-bottom: 10px;
+            border-color: #444;
         }
 
         .submit-button {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             border: none;
-            border-radius: 4px;
-            background-color: #322a25;
+            border-radius: 999px;
+            background-color: #dc3545;
             color: #fff;
-            font-size: 18px;
+            font-size: 17px;
             cursor: pointer;
+            margin-top: 6px;
+        }
+
+        .submit-button:hover {
+            background-color: #c82333;
         }
 
         .menu-section {
@@ -207,52 +218,51 @@
 
         .highlight-background {
             background-color: #f9f9d6;
-            padding: 12px;
+            padding: 10px 10px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             margin-top: 5px;
-            font-size: 14px;
-            line-height: 1.8;
+            font-size: 13px;
+            line-height: 1.7;
         }
 
         /* 基本説明テキスト */
         .info-text {
-            margin: 10px 0 20px 0;
+            margin: 8px 0 14px 0;
             font-family: "Noto Sans JP", "Roboto", sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             color: #333;
             background-color: #f8f9fa;
-            line-height: 1.8;
+            line-height: 1.7;
             text-align: left;
             word-wrap: break-word;
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
             border: 1px solid #ced4da;
         }
 
         .info-textmemo {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 13px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            font-size: 12px;
             color: #000000;
-            line-height: 1.5;
-            text-align: center;
+            line-height: 1.6;
+            text-align: left;
             word-wrap: break-word;
             background-color: #eef9f5;
-            padding: 10px;
-            border-radius: 4px;
+            padding: 8px 10px;
+            border-radius: 6px;
         }
 
         @media (max-width: 768px) {
             .info-text {
-                font-size: 13px;
-                padding: 10px;
+                font-size: 12px;
+                padding: 9px;
             }
 
             .info-textmemo {
                 font-size: 11.5px;
-                margin-top: 10px;
-                line-height: 2.0;
+                line-height: 1.8;
             }
         }
 
@@ -260,7 +270,7 @@
         textarea:focus {
             border-color: #13ca5e;
             outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 8px rgba(19, 202, 94, 0.25);
         }
 
         button {
@@ -276,52 +286,41 @@
 
         button:hover {
             background-color: #e9e9e9;
-            transform: scale(1.05);
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .submit-button:hover {
-            background-color: #c82333;
+            transform: scale(1.02);
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 15px;
+                padding: 16px 12px 18px;
             }
 
             h1 {
-                font-size: 22px;
+                font-size: 20px;
             }
 
             input,
-            button {
+            button,
+            textarea {
                 font-size: 14px;
             }
         }
 
         button.active {
             outline: 2px solid #696969;
-            outline-offset: 2px;
+            outline-offset: 1px;
         }
 
         /* 必須マークのスタイル */
         .required {
             color: #ffffff;
             font-weight: lighter;
-            font-size: 0.6em;
-            margin-left: 5px;
-            vertical-align: 0.8em;
+            font-size: 0.65em;
+            margin-left: 0;
+            vertical-align: 0.2em;
             background-color: rgb(255, 15, 15);
             padding: 0 5px;
             border-radius: 3px;
-            margin-right: 5px;
+            margin-right: 4px;
         }
 
         .note-text-small {
@@ -329,6 +328,54 @@
             display: block;
             margin-top: 3px;
             color: #fff5c2;
+        }
+
+        /* 希望日時まわりをスマホで見やすく */
+        .date-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .date-item {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 8px 10px 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .date-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 0 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date-pill {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            line-height: 1.4;
+        }
+
+        .required-pill {
+            background-color: #ff4d4f;
+            color: #fff;
+        }
+
+        .optional-pill {
+            background-color: #e0e0e0;
+            color: #555;
+        }
+
+        .date-hint {
+            font-size: 11px;
+            color: #777;
+            margin-top: 4px;
         }
     </style>
 </head>
@@ -370,16 +417,41 @@
 
         <!-- ③ 引っ越し日時（第1〜第3希望） -->
         <div class="label">
-            <span class="required">必須</span>引っ越し希望日時（第1希望〜第3希望）
+            <span class="required">必須</span>引っ越し希望日時
             <span class="note-text-small">
+                第1希望〜第3希望を選択してください。<br>
                 ※第2希望まで必須です。<br>
                 ※<strong>土日祝は基本料金の2割増</strong>となりますのでご注意ください。
             </span>
         </div>
-        <div class="date-inputs">
-            <input type="datetime-local" id="date1" placeholder="第1希望">
-            <input type="datetime-local" id="date2" placeholder="第2希望">
-            <input type="datetime-local" id="date3" placeholder="第3希望（任意）">
+
+        <div class="date-section">
+            <div class="date-item">
+                <p class="date-title">
+                    第1希望
+                    <span class="date-pill required-pill">必須</span>
+                </p>
+                <input type="datetime-local" id="date1">
+                <div class="date-hint">例：2025-04-01 10:00</div>
+            </div>
+
+            <div class="date-item">
+                <p class="date-title">
+                    第2希望
+                    <span class="date-pill required-pill">必須</span>
+                </p>
+                <input type="datetime-local" id="date2">
+                <div class="date-hint">例：2025-04-02 14:00</div>
+            </div>
+
+            <div class="date-item">
+                <p class="date-title">
+                    第3希望
+                    <span class="date-pill optional-pill">任意</span>
+                </p>
+                <input type="datetime-local" id="date3">
+                <div class="date-hint">空いていれば希望、という日時があればご入力ください。</div>
+            </div>
         </div>
 
         <!-- ④ 現住所 -->
@@ -475,7 +547,7 @@
         // LIFF初期化
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2008510250-NRgn9a26' // あなたのLIFF IDに置き換えてください
+                liffId: '2005254357-zKma9BZk' // あなたのLIFF IDに置き換えてください
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
