@@ -377,6 +377,23 @@
             color: #777;
             margin-top: 4px;
         }
+        /* 引っ越し希望日時の入力欄がはみ出さないように調整 */
+        .date-item input[type="datetime-local"] {
+            width: 100%;          /* 親要素基準で100% */
+            max-width: 260px;     /* それ以上は広がらないようにする */
+            display: block;
+            margin: 0 auto;       /* 中央寄せ */
+            box-sizing: border-box;
+        }
+        
+        /* 画面がかなり小さい端末用に、さらに調整（任意） */
+        @media (max-width: 360px) {
+            .date-item input[type="datetime-local"] {
+                max-width: 230px;
+                font-size: 13px;
+                padding: 8px 6px;
+            }
+        }
     </style>
 </head>
 
