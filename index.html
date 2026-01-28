@@ -398,6 +398,20 @@
                 padding: 8px 6px;
             }
         }
+
+        /* 追加依頼ボタン：1列で幅を広げる（見切れ防止） */
+        .extra-buttons {
+          flex-direction: column;   /* 縦並び */
+        }
+        
+        .extra-buttons button {
+          width: 100%;
+          flex: 0 0 auto;           /* flex:1 を解除 */
+          min-width: 100%;
+          white-space: normal;      /* 折り返しOK */
+          line-height: 1.2;
+          padding: 12px 10px;
+        }
     </style>
 </head>
 
