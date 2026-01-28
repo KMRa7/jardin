@@ -381,16 +381,12 @@
         /* 引っ越し希望日時の入力欄がはみ出さないように調整 */
         .date-item input[type="datetime-local"] {
             width: 100%;
-            /* 親要素基準で100% */
             max-width: 260px;
-            /* それ以上は広がらないようにする */
             display: block;
             margin: 0 auto;
-            /* 中央寄せ */
             box-sizing: border-box;
         }
 
-        /* 画面がかなり小さい端末用に、さらに調整（任意） */
         @media (max-width: 360px) {
             .date-item input[type="datetime-local"] {
                 max-width: 230px;
@@ -399,25 +395,27 @@
             }
         }
 
-        /* 追加依頼ボタン：1列で幅を広げる（見切れ防止） */
+        /* ★最後に～（追加依頼）：折り返しNG（nowrap）＋内容幅。入らない時は横スクロールで見切れ回避 */
         .extra-buttons {
-          flex-direction: column;   /* 縦並び */
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
-        
-        .extra-buttons button{
-          flex: 0 0 calc(50% - 8px);
-          min-width: calc(50% - 8px);
-          white-space: normal;   /* 折り返して見切れ防止 */
-          line-height: 1.2;
-          padding: 12px 8px;
+
+        .extra-buttons button {
+            flex: 0 0 auto;
+            width: auto;
+            min-width: 0;
+            white-space: nowrap;   /* 折り返し禁止 */
+            padding: 10px 10px;
         }
-        
-        /* かなり小さい端末は1列にして見切れ防止 */
-        @media (max-width: 360px){
-          .extra-buttons button{
-            flex: 0 0 100%;
-            min-width: 100%;
-          }
+
+        @media (max-width: 600px) {
+            .extra-buttons button {
+                font-size: 12px;
+                padding: 10px 8px;
+            }
         }
     </style>
 </head>
@@ -572,7 +570,9 @@
         </div>
 
         <!-- 16 追加依頼（任意・複数選択） -->
-        <div class="label">最後に他にも一緒にご依頼したい項目がございましたらお選びください。</div>
+        <div class="label">
+            最後に他にも一緒にご依頼したい項目がございましたらお選びください。（任意・選択形式）
+        </div>
         <div class="button-group extra-buttons">
             <button type="button" onclick="toggleExtra(this)">お引っ越し</button>
             <button type="button" onclick="toggleExtra(this)">作業代行</button>
@@ -705,80 +705,24 @@
                 cardboardCount,
                 packing,
                 payment,
-                // ★追加
                 extraRequests
             };
 
             // バリデーション
-            if (!formData.name) {
-                alert('お名前を入力してください。');
-                return;
-            }
-
-            if (!formData.phone) {
-                alert('お電話番号を入力してください。');
-                return;
-            }
-
-            if (!formData.date1 || !formData.date2) {
-                alert('引っ越し希望日時の第1希望と第2希望を入力してください。');
-                return;
-            }
-
-            if (!formData.currentAddress) {
-                alert('現住所を入力してください。');
-                return;
-            }
-
-            if (!formData.elevatorFrom) {
-                alert('現住所のエレベーターの有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.currentFloor) {
-                alert('現住所のお住まい階数を入力してください。');
-                return;
-            }
-
-            if (!formData.newAddress) {
-                alert('新住所を入力してください。');
-                return;
-            }
-
-            if (!formData.elevatorTo) {
-                alert('新住所のエレベーターの有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.newFloor) {
-                alert('新住所のお住まい予定階数を入力してください。');
-                return;
-            }
-
-            if (!formData.washingInstall) {
-                alert('洗濯機の設置有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.airconMove) {
-                alert('エアコンの移設の有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.disposal) {
-                alert('不用品の処分の有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.packing) {
-                alert('梱包作業の依頼の有無をご選択ください。');
-                return;
-            }
-
-            if (!formData.payment) {
-                alert('決済方法をご選択ください。');
-                return;
-            }
+            if (!formData.name) { alert('お名前を入力してください。'); return; }
+            if (!formData.phone) { alert('お電話番号を入力してください。'); return; }
+            if (!formData.date1 || !formData.date2) { alert('引っ越し希望日時の第1希望と第2希望を入力してください。'); return; }
+            if (!formData.currentAddress) { alert('現住所を入力してください。'); return; }
+            if (!formData.elevatorFrom) { alert('現住所のエレベーターの有無をご選択ください。'); return; }
+            if (!formData.currentFloor) { alert('現住所のお住まい階数を入力してください。'); return; }
+            if (!formData.newAddress) { alert('新住所を入力してください。'); return; }
+            if (!formData.elevatorTo) { alert('新住所のエレベーターの有無をご選択ください。'); return; }
+            if (!formData.newFloor) { alert('新住所のお住まい予定階数を入力してください。'); return; }
+            if (!formData.washingInstall) { alert('洗濯機の設置有無をご選択ください。'); return; }
+            if (!formData.airconMove) { alert('エアコンの移設の有無をご選択ください。'); return; }
+            if (!formData.disposal) { alert('不用品の処分の有無をご選択ください。'); return; }
+            if (!formData.packing) { alert('梱包作業の依頼の有無をご選択ください。'); return; }
+            if (!formData.payment) { alert('決済方法をご選択ください。'); return; }
 
             const textMessage =
                 `≪見積もり依頼≫
@@ -832,11 +776,7 @@
 【追加で一緒に依頼したい項目（任意）】
 ・${formData.extraRequests.length ? formData.extraRequests.join(' / ') : '（未選択）'}`;
 
-            // LINEトークにメッセージを送信
-            liff.sendMessages([{
-                type: 'text',
-                text: textMessage
-            }]).then(() => {
+            liff.sendMessages([{ type: 'text', text: textMessage }]).then(() => {
                 alert('見積もり依頼を送信しました。ありがとうございます。');
                 liff.closeWindow();
             }).catch((err) => {
