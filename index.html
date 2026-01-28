@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>見積もり依頼フォーム</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
@@ -377,15 +377,19 @@
             color: #777;
             margin-top: 4px;
         }
+
         /* 引っ越し希望日時の入力欄がはみ出さないように調整 */
         .date-item input[type="datetime-local"] {
-            width: 100%;          /* 親要素基準で100% */
-            max-width: 260px;     /* それ以上は広がらないようにする */
+            width: 100%;
+            /* 親要素基準で100% */
+            max-width: 260px;
+            /* それ以上は広がらないようにする */
             display: block;
-            margin: 0 auto;       /* 中央寄せ */
+            margin: 0 auto;
+            /* 中央寄せ */
             box-sizing: border-box;
         }
-        
+
         /* 画面がかなり小さい端末用に、さらに調整（任意） */
         @media (max-width: 360px) {
             .date-item input[type="datetime-local"] {
@@ -412,32 +416,32 @@
 
         <!-- 依頼の注意事項（いちばん上で目立たせる） -->
         <div class="highlight-background">
-            <strong>【依頼の注意事項】</strong><br>
-            現地見積もりではない場合、<br>
-            <strong>荷物情報・不用品の内容・エアコンの設置場所等が分かるように、<br>
-                お写真や動画をお送りいただく場合がございます。</strong><br>
+            <strong>【依頼の注意事項】</strong><br />
+            現地見積もりではない場合、<br />
+            <strong>荷物情報・不用品の内容・エアコンの設置場所等が分かるように、<br />
+                お写真や動画をお送りいただく場合がございます。</strong><br />
             事前にご準備をお願いいたします。
         </div>
 
         <div class="info-text">
-            以下すべてご入力のうえ、画面下部の<br>
+            以下すべてご入力のうえ、画面下部の<br />
             【見積もり依頼を送信】ボタンを押してください。
         </div>
 
         <!-- ① お名前 -->
         <div class="label"><span class="required">必須</span>お名前を教えてください。</div>
-        <input type="text" id="name" placeholder="入力してください">
+        <input type="text" id="name" placeholder="入力してください" />
 
         <!-- ② お電話番号 -->
         <div class="label"><span class="required">必須</span>お電話番号を教えてください。</div>
-        <input type="tel" id="phone" placeholder="入力してください">
+        <input type="tel" id="phone" placeholder="入力してください" />
 
         <!-- ③ 引っ越し日時（第1〜第3希望） -->
         <div class="label">
             <span class="required">必須</span>引っ越し希望日時
             <span class="note-text-small">
-                第1希望〜第3希望を選択してください。<br>
-                ※第2希望まで必須です。<br>
+                第1希望〜第3希望を選択してください。<br />
+                ※第2希望まで必須です。<br />
                 ※<strong>土日祝は基本料金の2割増</strong>となりますのでご注意ください。
             </span>
         </div>
@@ -448,7 +452,7 @@
                     第1希望
                     <span class="date-pill required-pill">必須</span>
                 </p>
-                <input type="datetime-local" id="date1">
+                <input type="datetime-local" id="date1" />
                 <div class="date-hint">例：2025-04-01 10:00</div>
             </div>
 
@@ -457,7 +461,7 @@
                     第2希望
                     <span class="date-pill required-pill">必須</span>
                 </p>
-                <input type="datetime-local" id="date2">
+                <input type="datetime-local" id="date2" />
                 <div class="date-hint">例：2025-04-02 14:00</div>
             </div>
 
@@ -466,7 +470,7 @@
                     第3希望
                     <span class="date-pill optional-pill">任意</span>
                 </p>
-                <input type="datetime-local" id="date3">
+                <input type="datetime-local" id="date3" />
                 <div class="date-hint">空いていれば希望、という日時があればご入力ください。</div>
             </div>
         </div>
@@ -484,7 +488,7 @@
 
         <!-- ⑥ 現住所階数 -->
         <div class="label"><span class="required">必須</span>現住所のお住まい階数を教えてください。</div>
-        <input type="text" id="currentFloor" placeholder="例）3階 / 2階メゾネット など">
+        <input type="text" id="currentFloor" placeholder="例）3階 / 2階メゾネット など" />
 
         <!-- ⑦ 新住所 -->
         <div class="label"><span class="required">必須</span>新住所を教えてください。</div>
@@ -499,7 +503,7 @@
 
         <!-- ⑨ 新住所階数 -->
         <div class="label"><span class="required">必須</span>新住所のお住まい予定階数を教えてください。</div>
-        <input type="text" id="newFloor" placeholder="例）5階 / 1階 など">
+        <input type="text" id="newFloor" placeholder="例）5階 / 1階 など" />
 
         <!-- ➓ 洗濯機設置有無 -->
         <div class="label"><span class="required">必須</span>洗濯機の設置有無を教えてください。</div>
@@ -525,8 +529,8 @@
         <!-- 13 ダンボール購入枚数（任意） -->
         <div class="label">ダンボールの購入希望枚数をご記入ください。（任意）</div>
         <div class="info-textmemo">
-            小サイズ（長さ373×幅308×高さ200）：200円<br>
-            中サイズ（長さ475×幅320×高さ317）：250円<br>
+            小サイズ（長さ373×幅308×高さ200）：200円<br />
+            中サイズ（長さ475×幅320×高さ317）：250円<br />
             大サイズ（長さ500×幅360×高さ370）：280円
         </div>
         <textarea id="cardboardCount" rows="2" placeholder="例）小5枚・中3枚・大2枚 など"></textarea>
@@ -546,6 +550,20 @@
             <button type="button" onclick="selectPayment(this)">事前振り込み</button>
         </div>
 
+        <!-- 16 追加依頼（任意・複数選択） -->
+        <div class="label">最後に他にも一緒にご依頼したい項目がございましたらお選びください。（任意・選択形式）</div>
+        <div class="button-group extra-buttons">
+            <button type="button" onclick="toggleExtra(this)">お引っ越し</button>
+            <button type="button" onclick="toggleExtra(this)">作業代行</button>
+            <button type="button" onclick="toggleExtra(this)">エアコン洗浄</button>
+            <button type="button" onclick="toggleExtra(this)">エアコン着脱</button>
+            <button type="button" onclick="toggleExtra(this)">不用品回収</button>
+            <button type="button" onclick="toggleExtra(this)">遺品整理</button>
+            <button type="button" onclick="toggleExtra(this)">生前整理</button>
+            <button type="button" onclick="toggleExtra(this)">ハウスクリーニング</button>
+            <button type="button" onclick="toggleExtra(this)">クロス張り替え</button>
+        </div>
+
         <button class="submit-button" onclick="submitForm()" id="section-message">見積もり依頼を送信</button>
     </div>
 
@@ -560,6 +578,9 @@
         let disposal = '';
         let packing = '';
         let payment = '';
+
+        // ★追加（任意・複数選択）
+        let extraRequests = [];
 
         // LIFF初期化
         document.addEventListener('DOMContentLoaded', function () {
@@ -619,6 +640,20 @@
             payment = element.innerText;
         }
 
+        // ★追加：任意項目（複数選択）
+        function toggleExtra(element) {
+            const label = element.innerText.trim();
+            const idx = extraRequests.indexOf(label);
+
+            if (idx >= 0) {
+                extraRequests.splice(idx, 1);
+                element.classList.remove('active');
+            } else {
+                extraRequests.push(label);
+                element.classList.add('active');
+            }
+        }
+
         function submitForm() {
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
@@ -648,7 +683,9 @@
                 disposal,
                 cardboardCount,
                 packing,
-                payment
+                payment,
+                // ★追加
+                extraRequests
             };
 
             // バリデーション
@@ -769,7 +806,10 @@
 ・${formData.packing}
 
 【決済方法】
-・${formData.payment}`;
+・${formData.payment}
+
+【追加で一緒に依頼したい項目（任意）】
+・${formData.extraRequests.length ? formData.extraRequests.join(' / ') : '（未選択）'}`;
 
             // LINEトークにメッセージを送信
             liff.sendMessages([{
