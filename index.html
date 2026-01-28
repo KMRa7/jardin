@@ -404,13 +404,20 @@
           flex-direction: column;   /* 縦並び */
         }
         
-        .extra-buttons button {
-          width: 100%;
-          flex: 0 0 auto;           /* flex:1 を解除 */
-          min-width: 100%;
-          white-space: normal;      /* 折り返しOK */
+        .extra-buttons button{
+          flex: 0 0 calc(50% - 8px);
+          min-width: calc(50% - 8px);
+          white-space: normal;   /* 折り返して見切れ防止 */
           line-height: 1.2;
-          padding: 12px 10px;
+          padding: 12px 8px;
+        }
+        
+        /* かなり小さい端末は1列にして見切れ防止 */
+        @media (max-width: 360px){
+          .extra-buttons button{
+            flex: 0 0 100%;
+            min-width: 100%;
+          }
         }
     </style>
 </head>
